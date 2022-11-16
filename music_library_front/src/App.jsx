@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './Components'
+import getAllSongs from './Components/GetSongs/GetSongs';
+import updateSong from './Components/UpdateSong/UpdateSong';
+import AddSongForm from './Components/AddSong/AddSong';
 
 function App() {
 
-
   return (
-    <div>
-
-      <button onClick={() => getAllSongs()}>Get All Songs</button>
-      <button onClick={() => addSong()}>Add Song</button>
-      <button onClick={() => updateSong()}>Update Song</button>
-      <button onClick={() => }></button>
-    </div>
+    <body>
+      <div>
+        <div>
+          <header>
+            
+          </header>
+          <br />
+        </div>
+      </div>
+      <br />
+      <div>
+        {/* <AddSongForm addNewSongProperty = {newSong} /> */}
+      </div>
+    </body>
   );
 }
+
+      // <button onClick={() => getAllSongs()}>Get All Songs</button>
+      // <button onClick={() => updateSong()}>Update Song</button>
 
 export default App;

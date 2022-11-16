@@ -13,7 +13,7 @@ const AddSongForm = (props) => {
     const [genre, setGenre] = useState("");
 
 
-    handleSubmit = event => {
+    function handleSubmit(event) {
     event.preventDefault();
     let newSong = {
         title: title,
@@ -22,9 +22,9 @@ const AddSongForm = (props) => {
         release_date: release_date,
         genre: genre
         };
-    }
     console.log(newSong)
     props.addNewSongProperty(newSong)
+    }
 
     async function addSong(){
     const response = await axios.post('http://127.0.0.1:8000/api/music_backend/');
@@ -35,12 +35,16 @@ const AddSongForm = (props) => {
     return ( 
         <form onSubmit={handleSubmit} className="form-grid">
             <div className='form-group'>
-                <label>Weight</label>                                          
-                <input type="number" className="form-control" value={weight} onChange={(event) => setWeight(parseFloat(event.target.value))} />
-            </div>
-            <div className='form-group'>
-                <label>Date</label>
-                <input type="date" className="form-control" value={date} onChange={(event) => setDate(event.target.value)}/>
+                <label>Title</label>                                          
+                <input type="text" className="form-control" value={title} onChange={(event) => setTitle(event.target.value)} />
+                <label>Artist</label>
+                <input type="text" className="form-control" value={artist} onChange={(event) => setArtist(event.target.value)}/>
+                <label>Album</label>
+                <input type="text" className="form-control" value={album} onChange={(event) => setAlbum(event.target.value)}/>
+                <label>Release Date</label>
+                <input type="date" className="form-control" value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/>
+                <label>Genre</label>
+                <input type="text" className="form-control" value={genre} onChange={(event) => setGenre(event.target.value)}/>
             </div>
             <button type="submit" className="btn btn-primary" style={{'margin-top': '1em'}}>Add</button>
         </form>

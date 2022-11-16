@@ -4,11 +4,11 @@ import deleteSong from "../DeleteSong/DeleteSong";
 import getAllSongs from "../GetSongs/GetSongs";
 import updateSong from "../UpdateSong/UpdateSong";
 
-function displayMusic(props) {
+// function displayMusic(props) {
 
-handleSubmit = event => {
-    event.preventDefault();
-    }
+// handleSubmit = event => {
+//     event.preventDefault();
+//     }
 
-}
+// }
 
