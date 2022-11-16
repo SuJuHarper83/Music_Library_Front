@@ -6,9 +6,5 @@ import updateSong from "../UpdateSong/UpdateSong";
 
 // function displayMusic(props) {
 
-// handleSubmit = event => {
-//     event.preventDefault();
-//     }
-
-// }
-
+ // <button onClick={() => getAllSongs()}>Get All Songs</button>
+      // <button onClick={() => updateSong()}>Update Song</button>
