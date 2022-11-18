@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import App from '../../App';
 
-async function AddSongForm(props) {
-     
+const AddSongForm = (props) => {
+
     const [title, setTitle] = useState("");
     const [artist, setArtist] = useState("");
     const [album, setAlbum] = useState("");
@@ -11,17 +12,17 @@ async function AddSongForm(props) {
     
     
     function handleSubmit(event) {
-    event.preventDefault();
-    let newSong = {
-        title: title,
-        artist: artist,
-        album: album,
-        release_date: release_date,
-        genre: genre
-        };
-        console.log(newSong)
-        props.addNewSongProperty(newSong)
-        }
+        event.preventDefault();
+        let newSong = {
+            title: title,
+            artist: artist,
+            album: album,
+            release_date: release_date,
+            genre: genre
+            };
+            console.log(newSong)
+            props.addNewSongProperty(newSong)
+            }
 
     return ( 
         <form onSubmit={handleSubmit} className="form-grid">
@@ -37,7 +38,7 @@ async function AddSongForm(props) {
                 <label>Genre</label>
                 <input type="text" className="form-control" value={genre} onChange={(event) => setGenre(event.target.value)}/>
             </div>
-            <button type="submit" className="btn btn-primary" style={{'margin-top': '1em'}}>Add</button>
+            <button type="submit" className="btn btn-primary">Add</button>
         </form>
     );
     
