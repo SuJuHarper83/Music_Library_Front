@@ -5,6 +5,7 @@ import AddSongForm from './Components/AddSong/AddSong';
 import SearchBar from './Components/SearchBar/SearchBar';
 import './App.css';
 
+
 function App() {
 
     const [songs, setSongs] = useState([]);
@@ -33,15 +34,17 @@ function App() {
         } 
 
 
-    // useEffect (() => {
-    //     DeleteSong();
-    // }, []);
+    useEffect (() => {
+        DeleteSong();
+    }, []);
         
-    // async function DeleteSong(){
-    //     const response = await axios.delete('http://127.0.0.1:8000/api/music/');
-    //     console.log(response.data)
-    //     setSongs(response.data)
-    //     } 
+    async function DeleteSong(id){
+        const response = await axios.delete('http://127.0.0.1:8000/api/music/');
+        console.log(response.data);
+
+        const songs = this.state.songs.filter(item => item.id !== id);
+        this.setSongs({songs});
+        } 
 
     // useEffect (() => {
     //     UpdateSong();

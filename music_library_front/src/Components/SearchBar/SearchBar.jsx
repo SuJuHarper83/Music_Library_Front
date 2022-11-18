@@ -27,11 +27,15 @@ const SearchBar = (props) => {
         </div>
         <div className="Search Results">
            <table>
-            <th>Title</th>
-            <th>Artist</th>
-            <th>Album</th>
-            <th>Release Date</th>
-            <th>Genre</th>
+                <tbody>
+                    <tr>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>Album</th>
+                        <th>Release Date</th>
+                        <th>Genre</th>
+                    </tr>
+                </tbody>
             </table> 
         </div>
         </>
