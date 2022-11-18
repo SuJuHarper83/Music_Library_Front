@@ -11,10 +11,10 @@ function App() {
     const [songs, setSongs] = useState([]);
 
     useEffect(() => {
-        SearchSong();
+        SetSearch();
     }, []);
     
-    async function SearchSong(){
+    async function SetSearch(){
             
         const response = await axios.get('http://127.0.0.1:8000/api/music/');
         console.log(response.data)
@@ -39,7 +39,7 @@ function App() {
     }, []);
         
     async function DeleteSong(id){
-        const response = await axios.delete('http://127.0.0.1:8000/api/music/');
+        const response = await axios.delete('http://127.0.0.1:8000/api/music/', {id});
         console.log(response.data);
 
         const songs = this.state.songs.filter(item => item.id !== id);
@@ -73,7 +73,7 @@ function App() {
             <h3 style={{'margin': '1em'}}>Music 
             <small className='text-muted'>Library</small></h3>
                 <div>
-                <SearchBar songSearchProperty = {SearchSong} />
+                <SearchBar parentEntries = {entry} />
                 <div className='border-box'>
                 <DisplayMusic parentEntries = {songs} />
                 </div>
