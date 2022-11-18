@@ -1,10 +1,13 @@
-import { useState } from "react";
-import addSong from "../AddSong/AddSong";
-import deleteSong from "../DeleteSong/DeleteSong";
-import getAllSongs from "../GetSongs/GetSongs";
-import updateSong from "../UpdateSong/UpdateSong";
+import React, { useState } from 'react';
+import axios from 'axios';
 
-// function displayMusic(props) {
-
- // <button onClick={() => getAllSongs()}>Get All Songs</button>
-      // <button onClick={() => updateSong()}>Update Song</button>
+function displayMusic(props) {
+     
+         return ( 
+          // <button onClick={() => getAllSongs()}>Get All Songs</button>
+          // <button onClick={() => updateSong()}>Update Song</button>
+         );
+     
+     }
+     
+     export default displayMusic;

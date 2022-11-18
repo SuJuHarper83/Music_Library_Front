@@ -1,18 +1,15 @@
-// (10 points) As a music enthusiast, I want to be able to add a song to my database by using Axios to make a 
-// POST request to the Django REST API
-
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const AddSongForm = (props) => {
-
+async function AddSongForm(props) {
+     
     const [title, setTitle] = useState("");
     const [artist, setArtist] = useState("");
     const [album, setAlbum] = useState("");
     const [release_date, setReleaseDate] = useState("");
     const [genre, setGenre] = useState("");
-
-
+    
+    
     function handleSubmit(event) {
     event.preventDefault();
     let newSong = {
@@ -22,15 +19,9 @@ const AddSongForm = (props) => {
         release_date: release_date,
         genre: genre
         };
-    console.log(newSong)
-    props.addNewSongProperty(newSong)
-    }
-
-    async function addSong(){
-    const response = await axios.post('http://127.0.0.1:8000/api/music_backend/');
-    console.log(response.data)
-    addSong(response.data)
-    }
+        console.log(newSong)
+        props.addNewSongProperty(newSong)
+        }
 
     return ( 
         <form onSubmit={handleSubmit} className="form-grid">
@@ -49,7 +40,7 @@ const AddSongForm = (props) => {
             <button type="submit" className="btn btn-primary" style={{'margin-top': '1em'}}>Add</button>
         </form>
     );
-
+    
 }
 
 export default AddSongForm;
