@@ -22,12 +22,11 @@ function App() {
         setSongs(response.data)
         } 
         
-    // async function DeleteSong(id, event){
-    //     const response = await axios.delete('http://127.0.0.1:8000/api/music/${id}');
-    //     console.log(response.data)
-    //     GetAllSongs()
-    // }
- 
+    async function DeleteSong(id, event){
+        const response = await axios.delete('http://127.0.0.1:8000/api/music/${id}');
+        console.log(response.data)
+        GetAllSongs()
+    }
 
     // async function UpdateSong(){
     //     const response = await axios.put('http://127.0.0.1:8000/api/music/');
@@ -45,8 +44,6 @@ function App() {
     return ( 
         <div className='container-fluid'>
             <div>
-            <h3 style={{'margin': '1em'}}>Music 
-            <small className='text-muted'>Library</small></h3>
                 <div>
                 <SearchBar entry = {songs} />
                 <div className='border-box'>

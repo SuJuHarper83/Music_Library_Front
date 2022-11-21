@@ -16,18 +16,18 @@ const DisplayMusic = (props) => {
                               <th>Release Date</th>
                               <th>Genre</th>
                          </tr>
-                         {props.parentEntries.map((entry, index) => {
+                         {props.parentEntries.map((song, index) => {
                          return (
                          <tr key={index}>
                               <td>{index +1}</td>
-                              <td>{entry.title}</td>
-                              <td>{entry.artist}</td>
-                              <td>{entry.album}</td>
-                              <td>{entry.release_date}</td>
-                              <td>{entry.genre}</td>
+                              <td>{song.title}</td>
+                              <td>{song.artist}</td>
+                              <td>{song.album}</td>
+                              <td>{song.release_date}</td>
+                              <td>{song.genre}</td>
                               {/* <button onClick={() => UpdateSong()}>Update Song</button> */}
                               <td>
-                                   <button onClick={() => DeleteSong()}>Delete Song</button>
+                              <button onClick={() => DeleteSong()}>Delete Song</button>
                               </td>
                          </tr>
                          );

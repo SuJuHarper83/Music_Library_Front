@@ -1,7 +1,18 @@
+import React, { useState, useEffect } from "react";
+import DisplayMusic from "../DisplayMusic/DisplayMusic";
 import SearchBar from "../SearchBar/SearchBar";
 import App from "../../App";
+import './Modal.css';
 
 const Modal = ({setModalOpen}) => {
+    
+    const [filteredSongs, setFilteredSong] = useState([]);
+
+    useEffect(() => {
+        setFilteredSong(filteredSongs);
+    }, []);
+        // will keep the reupdates from happening over and over, and keeps it to 2 updates
+
     return (
         <div className="Modal-Background">
             <div className="Modal-Container">

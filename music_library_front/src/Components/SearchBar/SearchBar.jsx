@@ -3,6 +3,7 @@ import './SearchBar.css';
 import Modal from "../Modal/Modal";
 
 const SearchBar = (props) => {
+
     const[search, SetSearch] = useState()
     const[modalOpen, setModalOpen] = useState(false)
 
