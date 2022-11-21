@@ -10,17 +10,6 @@ function App() {
 
     const [songs, setSongs] = useState([]);
 
-    useEffect(() => {
-        SetSearch();
-    }, []);
-    
-    async function SetSearch(){
-            
-        const response = await axios.get('http://127.0.0.1:8000/api/music/');
-        console.log(response.data)
-        setSongs(response.data)
-    }
-
     useEffect (() => {
         GetAllSongs();
     }, []);
@@ -32,38 +21,24 @@ function App() {
         console.log(response.data)
         setSongs(response.data)
         } 
-
-
-    useEffect (() => {
-        DeleteSong();
-    }, []);
         
-    async function DeleteSong(id){
-        const response = await axios.delete('http://127.0.0.1:8000/api/music/', {id});
-        console.log(response.data);
+    // async function DeleteSong(id, event){
+    //     const response = await axios.delete('http://127.0.0.1:8000/api/music/${id}');
+    //     console.log(response.data)
+    //     GetAllSongs()
+    // }
+ 
 
-        const songs = this.state.songs.filter(item => item.id !== id);
-        this.setSongs({songs});
-        } 
-
-    // useEffect (() => {
-    //     UpdateSong();
-    // }, []);
-          
     // async function UpdateSong(){
     //     const response = await axios.put('http://127.0.0.1:8000/api/music/');
     //     console.log(response.data)
     //     setSongs(response.data)
     // }
 
-    useEffect (() => {
-        AddSong();
-    }, []);
-
-    async function AddSong(){
-        const response = await axios.get('http://127.0.0.1:8000/api/music/');
+    async function AddSong(newSong){
+        const response = await axios.post('http://127.0.0.1:8000/api/music/', newSong);
         console.log(response.data)
-        setSongs(response.data)
+        GetAllSongs()
         } 
     
 
@@ -73,7 +48,7 @@ function App() {
             <h3 style={{'margin': '1em'}}>Music 
             <small className='text-muted'>Library</small></h3>
                 <div>
-                <SearchBar parentEntries = {entry} />
+                <SearchBar entry = {songs} />
                 <div className='border-box'>
                 <DisplayMusic parentEntries = {songs} />
                 </div>
