@@ -46,9 +46,12 @@ function App() {
             <div>
                 <div>
                 <SearchBar entry = {songs} />
-                <div className='border-box'>
+                </div>
+                <div>
                 <DisplayMusic parentEntries = {songs} />
                 </div>
+                <br />
+                <div>
                 <AddSongForm addNewSongProperty = {AddSong} />
                 </div>
             </div>

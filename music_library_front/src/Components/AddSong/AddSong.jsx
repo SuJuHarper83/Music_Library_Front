@@ -24,20 +24,27 @@ const AddSongForm = (props) => {
             }
 
     return ( 
-        <form onSubmit={handleSubmit} className="form-grid">
-            <div className='form-group'>
+        <form onSubmit={handleSubmit} className="grid-container">
+            <div className ="form-group">
+                <td>
                 <label>Title</label>                                          
-                <input type="text" className="form-control" value={title} onChange={(event) => setTitle(event.target.value)} />
+                <input type="text" className="form-control" value={title} onChange={(event) => setTitle(event.target.value)} /></td>
+                <td>
                 <label>Artist</label>
-                <input type="text" className="form-control" value={artist} onChange={(event) => setArtist(event.target.value)}/>
+                <input type="text" className="form-control" value={artist} onChange={(event) => setArtist(event.target.value)}/></td>
+                <td>
                 <label>Album</label>
-                <input type="text" className="form-control" value={album} onChange={(event) => setAlbum(event.target.value)}/>
+                <input type="text" className="form-control" value={album} onChange={(event) => setAlbum(event.target.value)}/></td>
+                <td>
                 <label>Release Date</label>
-                <input type="date" className="form-control" value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/>
+                <input type="date" className="form-control" value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/></td>
+                <td>
                 <label>Genre</label>
-                <input type="text" className="form-control" value={genre} onChange={(event) => setGenre(event.target.value)}/>
+                <input type="text" className="form-control" value={genre} onChange={(event) => setGenre(event.target.value)}/></td>
+                <td>
+                <span><button type="submit" className="btn btn-primary">Add</button></span>
+                </td>
             </div>
-            <button type="submit" className="btn btn-primary">Add</button>
         </form>
     );
     

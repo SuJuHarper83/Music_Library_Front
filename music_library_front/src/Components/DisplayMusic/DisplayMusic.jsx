@@ -6,10 +6,10 @@ const DisplayMusic = (props) => {
      return (
           <>
           <button onClick={() => GetAllSongs()}>Get All Songs</button>
-          <div className="table">
+          <div className="grid-container">
                <table>
                     <tbody>
-                         <tr>
+                         <tr className="grid-container">
                               <th>Title</th>
                               <th>Artist</th>
                               <th>Album</th>
@@ -25,7 +25,6 @@ const DisplayMusic = (props) => {
                               <td>{song.album}</td>
                               <td>{song.release_date}</td>
                               <td>{song.genre}</td>
-                              {/* <button onClick={() => UpdateSong()}>Update Song</button> */}
                               <td>
                               <button onClick={() => DeleteSong()}>Delete Song</button>
                               </td>
