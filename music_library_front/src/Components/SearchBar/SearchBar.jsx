@@ -1,34 +1,22 @@
 import { useState } from "react";
 import './SearchBar.css';
-import Modal from "../Modal/Modal";
+// import Modal from "../Modal/Modal";
 
 const SearchBar = (props) => {
 
     const[search, SetSearch] = useState()
-    const[modalOpen, setModalOpen] = useState(false)
+    // const[modalOpen, setModalOpen] = useState(false)
 
     return (
-        <>
-        <input type="text" value={search} onChange={(event) => SetSearch(event.target.value)}/>
-        <div className="Search Results">
-        <button onClick={() => setModalOpen(true)}>Submit</button>
-        {modalOpen && <Modal setModalOpen = {setModalOpen}/>}
+        <div className="search-bar"><input type="text" value={search} onChange={(event) => SetSearch(event.target.value)}/>
+        <button className="search-btn" onClick={() => SetSearch()}>Filter</button>
            <table>
-                {/* <tbody>
-                    <tr>
-                        <th>Title</th>
-                        <th>Artist</th>
-                        <th>Album</th>
-                        <th>Release Date</th>
-                        <th>Genre</th>
-                    </tr>
-                </tbody> */}
                 <tbody>
                     {props.entry.filter((song) => {
                      if (search === ""){
                         return song;
                         }
-                    else if (song.title.includes(search) ||
+                    if (song.title.includes(search) ||
                     song.artist.includes(search) ||
                     song.album.includes(search) ||
                     song.release_date.includes (search) ||
@@ -39,7 +27,7 @@ const SearchBar = (props) => {
                     .map((song, index) => {
                         return (
                             <>
-                            <table>
+                            <table className="search-table">
                                 <tr key={index}>
                                 <td>{song.title}</td>
                                 <td>{song.artist}</td>
@@ -49,12 +37,11 @@ const SearchBar = (props) => {
                                 </tr>
                             </table>
                             </>
-                        );
+                        )
                     })};
                 </tbody>
             </table>
             </div> 
-        </>
     );
 }
 

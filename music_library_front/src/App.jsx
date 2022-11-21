@@ -42,6 +42,7 @@ function App() {
     
 
     return ( 
+        <body>
         <div className='container-fluid'>
             <div>
                 <div>
@@ -56,6 +57,7 @@ function App() {
                 </div>
             </div>
         </div>
+        </body>
           );
     }
 

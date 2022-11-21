@@ -24,25 +24,25 @@ const AddSongForm = (props) => {
             }
 
     return ( 
-        <form onSubmit={handleSubmit} className="grid-container">
+        <form onSubmit={handleSubmit} className="add-songs-table">
             <div className ="form-group">
-                <td>
-                <label>Title</label>                                          
+                <td className='songs-td'>
+                <label>Title  </label>                                          
                 <input type="text" className="form-control" value={title} onChange={(event) => setTitle(event.target.value)} /></td>
-                <td>
-                <label>Artist</label>
+                <td className='songs-td'>
+                <label>Artist  </label>
                 <input type="text" className="form-control" value={artist} onChange={(event) => setArtist(event.target.value)}/></td>
-                <td>
-                <label>Album</label>
+                <td className='songs-td'>
+                <label>Album  </label>
                 <input type="text" className="form-control" value={album} onChange={(event) => setAlbum(event.target.value)}/></td>
-                <td>
-                <label>Release Date</label>
+                <td className='songs-td'>
+                <label>Release Date  </label>
                 <input type="date" className="form-control" value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/></td>
-                <td>
-                <label>Genre</label>
+                <td className='songs-td'>
+                <label>Genre  </label>
                 <input type="text" className="form-control" value={genre} onChange={(event) => setGenre(event.target.value)}/></td>
-                <td>
-                <span><button type="submit" className="btn btn-primary">Add</button></span>
+                <td className='songs-td'>
+                <span><button type="submit" className="add-song-btn">Add</button></span>
                 </td>
             </div>
         </form>

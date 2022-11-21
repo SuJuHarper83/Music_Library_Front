@@ -1,0 +1,24 @@
+*,
+*::before
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.search-bar {
+    margin-left: auto;
+    margin-right: auto;
+}
+.search-table {
+    grid-template-columns: auto auto auto auto auto auto;
+    background-color: white;
+    border: 1px solid black;
+    vertical-align: inherit;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    padding: 10px;
+    opacity: 0.85;
+}
