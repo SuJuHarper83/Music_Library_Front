@@ -7,8 +7,8 @@ const DisplayMusic = (props) => {
      return (
           <>
           <div className="music-display">
-          <div className="get-songs-btn"><button onClick={() => GetAllSongs()}>Get All Songs</button></div>
-               <table className='display-table'>
+          {/* <div className="get-songs-btn"><button onClick={() => GetAllSongs()}>Get All Songs</button></div> */}
+               <table className="display-table">
                     <tbody>
                          <tr className="display-head">
                               <th className="display-th">Title</th>

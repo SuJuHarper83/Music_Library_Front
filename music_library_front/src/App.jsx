@@ -56,9 +56,13 @@ function App() {
                 <DisplayMusic parentEntries = {songs} />
                 </div>
                 <br />
+                <br />
                 <div>
                 <AddSongForm addNewSongProperty = {AddSong} />
                 </div>
+                <br />
+                <br />
+                <br />
             </div>
         </div>
         </body>
