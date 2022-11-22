@@ -3,6 +3,7 @@ import axios from 'axios';
 import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import AddSongForm from './Components/AddSong/AddSong';
 import SearchBar from './Components/SearchBar/SearchBar';
+import NavBar from './Components/NavBar/NavBar';
 import './App.css';
 
 
@@ -45,6 +46,9 @@ function App() {
         <body>
         <div className='container-fluid'>
             <div>
+                <header>
+                    <NavBar></NavBar>
+                </header>
                 <div>
                 <SearchBar entry = {songs} />
                 </div>

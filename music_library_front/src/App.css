@@ -6,6 +6,17 @@
     box-sizing: inherit;
 }
 
+header {
+    position: relative;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    width: 100%;
+}
+
 body {
     background-image: url("https://cdn.wallpapersafari.com/42/21/WZxSHf.jpg");
     background-repeat: no-repeat;
