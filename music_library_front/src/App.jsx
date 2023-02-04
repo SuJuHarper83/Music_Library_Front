@@ -23,8 +23,8 @@ function App() {
         setSongs(response.data)
         } 
         
-    async function DeleteSong(id, event){
-        const response = await axios.delete('http://127.0.0.1:8000/api/music/${id}');
+    async function DeleteSong(id){
+        const response = await axios.delete(`http://127.0.0.1:8000/api/music/${id}/`);
         console.log(response.data)
         GetAllSongs()
     }
@@ -47,22 +47,17 @@ function App() {
         <div className='container-fluid'>
             <div>
                 <header>
-                    <NavBar></NavBar>
+                    <NavBar />
                 </header>
                 <div>
                 <SearchBar entry = {songs} />
                 </div>
                 <div>
-                <DisplayMusic parentEntries = {songs} />
+                <DisplayMusic DeleteSong={DeleteSong} parentEntries = {songs} />
                 </div>
-                <br />
-                <br />
                 <div>
                 <AddSongForm addNewSongProperty = {AddSong} />
                 </div>
-                <br />
-                <br />
-                <br />
             </div>
         </div>
         </body>
